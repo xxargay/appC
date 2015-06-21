@@ -15,27 +15,23 @@
 
 <body>
     <div id="page">
-        <div class="header">
-            
-            Camera API
-        </div>
+        <div class="header">Camera API</div>
         <div class="content">
 
                 <div id="capture" class="tab-pane active">
-                    <br />
+                        <br />
                     <button onclick="capturePhoto();" class="btn btn-success">Capture Camera Photo</button>
-                    <br />
-                    <br />
+                        <br />
+                        <br />
                     <img style="display:none;" id="smallImage" src="" width="100%"/>
 
                 </div>
 
                 <div id="album" class="tab-pane">
-                    <br />
+                        <br />
                     <button onclick="getPhoto(Camera.PictureSourceType.SAVEDPHOTOALBUM);" class="btn btn-info">Select Image from Album</button>
-                    <br />
-                    <br />
-
+                        <br />
+                        <br />
                     <img style="display:none;" id="largeImage" src="" width="100%"/>
                 </div>
 
@@ -47,12 +43,14 @@
     
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/fastclick.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    
 
     <script type="text/javascript">
         document.addEventListener('deviceready', onDeviceReady, false);
 
         function onDeviceReady() {}
+
+
 
         function capturePhoto() {
 
@@ -63,24 +61,16 @@
             });
         }
 
-        function onPhotoDataSuccess(imageData) {
+                function onPhotoDataSuccess(imageData) {
 
-            var smallImage = document.getElementById('smallImage');
+                    var smallImage = document.getElementById('smallImage');
 
-            smallImage.style.display = 'block';
-            smallImage.src = "data:image/jpeg;base64," + imageData;
+                    smallImage.style.display = 'block';
+                    smallImage.src = "data:image/jpeg;base64," + imageData;
+
+                }
 
 
-        }
-
-        function onPhotoURISuccess(imageURI) {
-
-            var largeImage = document.getElementById('largeImage');
-
-            largeImage.style.display = 'block';
-
-            largeImage.src = "data:image/jpeg;base64," + imageURI;
-        }
 
         function getPhoto(source) {
             navigator.camera.getPicture(onPhotoURISuccess, onFail, {
@@ -89,6 +79,15 @@
                 sourceType: source
             });
         }
+
+                function onPhotoURISuccess(imageURI) {
+
+                    var largeImage = document.getElementById('largeImage');
+
+                    largeImage.style.display = 'block';
+                    largeImage.src = "data:image/jpeg;base64," + imageURI;
+                }
+
 
 
         function onFail(message) {

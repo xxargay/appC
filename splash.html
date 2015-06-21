@@ -35,9 +35,21 @@
     <script type="text/javascript" src="js/main.js"></script>
 
     <script type="text/javascript">
-        function showScreen() {
-            navigator.splashscreen.show();
+
+        function load() {
+        
+            alert("event load!");
+        
+            function showScreen() {
+                navigator.splashscreen.show();
+            }
+
+            showScreen();
+
         }
+
+    window.onload = load;
+
     </script>
 </body>
 

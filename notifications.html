@@ -51,6 +51,15 @@
             navigator.notification.vibrate(1000);
         }
 
+
+        function alertNow() {
+            alert("alerta...!")
+            navigator.notification.alert('You got an alert now');
+        }
+
+
+
+/*
         function alertNow() {
             navigator.notification.alert(
                 'You got an alert now', // message
@@ -81,7 +90,7 @@
                 handleAction, // callback to invoke
                 'Registration', // title
                 ['Ok', 'Exit'], // buttonLabels
-                'Super Star Rajini' // defaultText
+                'Pompeu Fabra' // defaultText
             );
 
             function handleAction(results) {
@@ -89,6 +98,8 @@
             }
 
         }
+
+*/
     </script>
 </body>
 

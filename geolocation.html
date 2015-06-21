@@ -12,6 +12,8 @@
     
     <title>Proves plugins PhoneGap</title>
 
+    <style>/* amaga textos de Googl sobre el mapa */.gm-style-cc { display:none; }button{ display:none; }</style>
+
 </head>
 
 <body>
@@ -62,7 +64,7 @@
 
             var myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             var mapOptions = {
-                zoom: 4,
+                zoom: 12,
                 center: myLatlng
             }
             var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);

@@ -27,36 +27,39 @@
         </div>
         <div class="content">
 
-                <button onclick="captureAudio();" class="btn-lg btn-success">Capture Audio</button>
+            <button onclick="captureAudio();" class="btn-lg btn-success">Capture Audio</button>
                 <br />
                 <br />
                 <br />
-                <button onclick="captureImage();" class="btn-lg btn-warning">Capture Image</button>
+            <button onclick="captureImage();" class="btn-lg btn-warning">Capture Image</button>
                 <br />
                 <br />
                 <br />
-                <button onclick="captureVideo();" class="btn-lg btn-danger">Capture Video</button>
+            <button onclick="captureVideo();" class="btn-lg btn-danger">Capture Video</button>
                 <br />
                 <br />
                 <br />
 
 
             <div id="details" style="display:none">
+
                 <b>File Path : </b> 
                 <div id="fullPath"></div>
-                <br />
+                    <br />
                 <b>File Name : </b> 
                 <div id="name"></div>
-                <br />
+                    <br />
                 <b>Type : </b> 
                 <div id="type"></div>
-                <br />
+                    <br />
                 <b>Last Modified Timestamp : </b> 
                 <div id="lastModifiedDate"></div>
-                <br />
+                    <br />
                 <b>File Size (bytes) : </b> 
                 <div id="size"></div>
+
             </div>
+
         </div>
 
     </div>
@@ -68,6 +71,7 @@
     <script type="text/javascript" src="js/main.js"></script>
 
     <script type="text/javascript">
+    
         function captureSuccess(mediaFiles) {
             var i, len;
             for (i = 0, len = mediaFiles.length; i < len; i += 1) {

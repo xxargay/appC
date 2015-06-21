@@ -82,4 +82,8 @@ input, textarea {
     background-color:#FF9;
     text-align: center;
     padding:10px;
+    width: 50%;
 }
+
+/* amaga textos de Googl sobre el mapa */
+.gm-style-cc { display:none; }
