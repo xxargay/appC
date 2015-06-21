@@ -1,6 +1,4 @@
-.content {
-    padding: 20px 50px 50px 50px;
-}
+
 
 .header,
 .content,
@@ -27,14 +25,15 @@ body {
 
 h1 {margin-bottom: 50px; color: #80A9BF; border-bottom: 3px solid #FFAA00 ;padding:20px;}
 
-a, p {
+a, p, button {
     display:inline-block; 
     text-decoration:none; 
     font-weight: bold;
     border-radius: 16px; 
-    padding:18px; 
+    padding:14px; 
     margin:10px 0;
     width: 50%;
+    min-width:250px;
     color: #D8ECF5;
     background-color: #7098AE;
 }
@@ -65,13 +64,10 @@ li {
 }
 
 button {
-    border-radius: 16px; 
     border:0;
     background-color:#AE4200;
     color:#FFF8EB;
-    padding:10px;
     text-decoration:none;
-    min-width:250px;
 }
 button:active {
     background-color:#CF9020;
