@@ -43,6 +43,8 @@ p {
     
 }
 
+table {width:100%;}
+
 .ready {display:none;}
 
 #estat, #estat2 {
