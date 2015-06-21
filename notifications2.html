@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+    
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <title>Proves plugins PhoneGap</title>
+
+    <style>
+        .btn-group-vertical > button {
+            margin-bottom: 10px;
+            border-radius: 10px !important;
+            display:block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page">
+        <div class="header">Notification API</div>
+        <div class="content">
+            <br />
+            <div class="btn-group-vertical" role="group" aria-label="...">
+
+                <button onclick="alertNow();" class="btn-lg btn-success">Alert Notify</button>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+    
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script type="text/javascript">
+        document.addEventListener('deviceready', onDeviceReady, false);
+
+        function onDeviceReady() {
+            //Do Something
+            alert('ready!');
+            navigator.notification.alert('hi!',null,'','hi2');
+        }
+
+ 
+        function alertNow() {
+            navigator.notification.alert(
+                'You got an alert now', // message
+                null, // callback
+                'Notifications API', // title
+                'Done' // buttonName
+            );
+        }
+
+   
+        
+    </script>
+</body>
+
+</html>
