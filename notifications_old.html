@@ -20,11 +20,11 @@
 
             <br />
             <div>
-                <button id="butt1" onclick="beepNow();" class="ready">Beep 3 Times</button>
-                <button id="butt2" onclick="vibrateNow();" class="ready">Vibrate 1 Sec</button>
-                <button id="butt3" onclick="alertNow();" class="ready">Alert Notify</button>
-                <button id="butt4" class="ready">Confirm Notify</button>
-                <button id="butt5" onclick="promptNow();" class="ready">Prompt Notify</button>
+                <button onclick="beepNow();" class="btn-lg btn-primary">Beep 3 Times</button>
+                <button onclick="vibrateNow();" class="btn-lg btn-info">Vibrate 1 Sec</button>
+                <button onclick="alertNow();" class="btn-lg btn-success">Alert Notify</button>
+                <button onclick="confirmNow();" class="btn-lg btn-warning">Confirm Notify</button>
+                <button onclick="promptNow();" class="btn-lg btn-danger">Prompt Notify</button>
             </div>
 
 
@@ -40,38 +40,12 @@
         document.addEventListener('deviceready', onDeviceReady, false);
 
         function onDeviceReady() {
-            // el dispositiu està preparat per als objectes de PhoneGap
-            //alert("Funciona!");
-            // fa visibles els botons DESPRÉS de l'event deviceready
-            var butt1 = document.getElementById("butt1");
-            var butt2 = document.getElementById("butt2");
-            var butt3 = document.getElementById("butt3");
-            var butt4 = document.getElementById("butt4");
-            var butt5 = document.getElementById("butt5");
-            
-            butt1.setAttribute('style', 'display:inline-block;');
-            butt2.setAttribute('style', 'display:inline-block;');
-            butt3.setAttribute('style', 'display:inline-block;');
-            butt4.setAttribute('style', 'display:inline-block;');
-            butt5.setAttribute('style', 'display:inline-block;');
-
-
-            butt4.addEventListener("click", function(){
-                alert("Funciona!");
-
-                navigator.notification.confirm(
-                    'You like this app?', // message
-                    onConfirm, // callback to invoke with index of button pressed
-                    'App Feedback', // title
-                    ['Yes', 'No'] // buttonLabels
-                );
-                
-            });
-
-
+            //Do Something
         }
 
-       
+        function beepNow() {
+            navigator.notification.beep(3);
+        }
 
         function vibrateNow() {
             navigator.notification.vibrate(1000);
