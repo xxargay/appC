@@ -15,21 +15,23 @@
 
 <body>
     <div id="page">
-        <div class="header">Camera API</div>
-        <div class="content">
 
-                <div id="capture" class="tab-pane active">
+        <div class="header">Camera API</div>
+        
+        <div>
+
+                <div id="capture">
                         <br />
-                    <button onclick="capturePhoto();" class="btn btn-success">Capture Camera Photo</button>
+                    <button onclick="capturePhoto();" >Capture Camera Photo</button>
                         <br />
                         <br />
                     <img style="display:none;" id="smallImage" src="" width="100%"/>
 
                 </div>
 
-                <div id="album" class="tab-pane">
+                <div id="album">
                         <br />
-                    <button onclick="getPhoto(Camera.PictureSourceType.SAVEDPHOTOALBUM);" class="btn btn-info">Select Image from Album</button>
+                    <button onclick="getPhoto(Camera.PictureSourceType.SAVEDPHOTOALBUM);">Select Image from Album</button>
                         <br />
                         <br />
                     <img style="display:none;" id="largeImage" src="" width="100%"/>

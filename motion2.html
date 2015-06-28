@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body id="color">
     <div id="page">
 
         <div class="header">Accelerometer API</div>
@@ -37,7 +37,6 @@
             <button id="start" onclick="onDeviceReady();" style="display:none;">Start Watching</button>
             <br />
             <button id="stop" onclick="stopWatch();">Stop Watching</button>
-            <a id="motion2">Stop Watching</button>
         </div>
 
     </div>
@@ -65,10 +64,26 @@
         }
 
         function onSuccess(acceleration) {
-            $('#dataX').html(acceleration.x);
-            $('#dataY').html(acceleration.y);
-            $('#dataZ').html(acceleration.z);
+
+            x = acceleration.x ;
+            y = acceleration.y ;
+            z = acceleration.z ;
+
+            $('#dataX').html(x);
+            $('#dataY').html(y);
+            $('#dataZ').html(z);
             $('#timeStamp').html(acceleration.timestamp);
+
+            var R = 25.5*x ;
+            var G = 25.5*y ;
+            var B = 25.5*y ;
+
+            var R = R.toFixed(0) ;
+            var G = G.toFixed(0) ;
+            var B = B.toFixed(0) ;
+
+            document.getElementById("color").style.backgroundColor = "rgba(" + R + "," + G + ", " + B + ", 1)" ;
+
         };
 
         function onError() {
