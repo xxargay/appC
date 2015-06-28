@@ -33,10 +33,15 @@
             <div id="timeStamp">0</div>
             <br />
             <br />
+            <br />R :<span id="R"></span>
+            <br />G :<span id="G"></span>
+            <br />B :<span id="B"></span>
+            
 
             <button id="start" onclick="onDeviceReady();" style="display:none;">Start Watching</button>
             <br />
             <button id="stop" onclick="stopWatch();">Stop Watching</button>
+
         </div>
 
     </div>
@@ -74,15 +79,23 @@
             $('#dataZ').html(z);
             $('#timeStamp').html(acceleration.timestamp);
 
-            var R = 25.5*x ;
-            var G = 25.5*y ;
-            var B = 25.5*y ;
+            x = x + 10 ;
+            y = y + 10 ;
+            z = z + 10 ;
+
+            var R = 12.75*x ;
+            var G = 12.75*y ;
+            var B = 12.75*y ;
 
             var R = R.toFixed(0) ;
             var G = G.toFixed(0) ;
             var B = B.toFixed(0) ;
 
             document.getElementById("color").style.backgroundColor = "rgba(" + R + "," + G + ", " + B + ", 1)" ;
+
+            document.getElementById("R").innerHTML = "color R: " + R ;
+            document.getElementById("G").innerHTML = "color G: " + G ;
+            document.getElementById("B").innerHTML = "color B: " + B ;
 
         };
 
