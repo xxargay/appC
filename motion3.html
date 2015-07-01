@@ -14,32 +14,23 @@
 
 </head>
 
-<body>
+<body id="color">
     <div id="page">
 
         <div class="header">Accelerometer API</div>
-        
-        <div>
-            <br />Acceleration X :
-            <div id="dataX">0</div>
-            <br />
-            <br />Acceleration Y :
-            <div id="dataY">0</div>
-            <br />
-            <br />Acceleration Z :
-            <div id="dataZ">0</div>
-            <br />
-            <br />TimeStamp :
-            <div id="timeStamp">0</div>
-            <br />
-            <br />
 
+        <div id="cercle" style="width:60px;height:60px;border-radius:50%;background-color:green;position:absolute;top:50%;left:50%;margin-top:-30px;margin-left:-30px;"></div>
+        
+        <div id="peu" style="position:absolute;bottom:0;">
+            Acceleration X :<span id="dataX">0</span><br />
+            Acceleration Y :<span id="dataY">0</span><br />
+            Acceleration Z :<span id="dataZ">0</span><br />
+            TimeStamp :<span id="timeStamp">0</span><br />
+            T :<span id="T"></span>L :<span id="L"></span>S :<span id="S"></span>
+            
             <button id="start" onclick="onDeviceReady();" style="display:none;">Start Watching</button>
             <br />
             <button id="stop" onclick="stopWatch();">Stop Watching</button>
-
-            <a id="motion2" href="motion2.html">Color Accelerometer</a>
-            <a id="motion3" href="motion3.html">Motion Accelerometer</a>
 
         </div>
 
@@ -61,17 +52,48 @@
             $('#start').hide();
 
             var options = {
-                frequency: 1000
-            }; // Update every 1 seconds
+                frequency: 100
+            }; // Update every 0.1 seconds
 			
             watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
         }
 
         function onSuccess(acceleration) {
-            $('#dataX').html(acceleration.x);
-            $('#dataY').html(acceleration.y);
-            $('#dataZ').html(acceleration.z);
+
+            x = acceleration.x ;
+            y = acceleration.y ;
+            z = acceleration.z ;
+
+            $('#dataX').html(x);
+            $('#dataY').html(y);
+            $('#dataZ').html(z);
             $('#timeStamp').html(acceleration.timestamp);
+
+            x = x + 10 ;
+            y = y + 10 ;
+            z = z + 10 ;
+
+            var T = 5*x ;
+            var L = 5*y ;
+            var S = 5*z ;
+
+            var T = T.toFixed(0) ;
+            var L = L.toFixed(0) ;
+            var S = S.toFixed(0) ;
+
+            document.getElementById("color").style.backgroundColor = "rgba(" + T + "," + L + ", " + S + ", 1)" ;
+
+            document.getElementById("T").innerHTML = "Top: " + T ;
+            document.getElementById("L").innerHTML = "Left: " + L ;
+            document.getElementById("S").innerHTML = "Size: " + S ;
+
+            document.getElementById("cercle").style.top = T + "%"
+            document.getElementById("cercle").style.left = L + "%"
+            document.getElementById("cercle").style.width = S + "px"
+            document.getElementById("cercle").style.height = S + "px"
+            document.getElementById("cercle").style.marginTop = S/2 + "px"
+            document.getElementById("cercle").style.marginLeft = S/2 + "px"
+
         };
 
         function onError() {
