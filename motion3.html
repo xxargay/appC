@@ -19,7 +19,7 @@
 
         <div class="header">Accelerometer API</div>
 
-        <div id="cercle" style="width:60px;height:60px;border-radius:50%;background-color:green;position:absolute;left:50%;top:50%;margin-top:-30px;margin-left:-30px;"></div>
+        <div id="quadrat" style="width:60px;height:60px;background-color:green;position:absolute;left:50%;top:50%;margin-top:-30px;margin-left:-30px;"></div>
         
         <div id="peu" style="position:absolute;bottom:0;">
             Acceleration X :<span id="dataX">0</span><br />
@@ -52,8 +52,8 @@
             $('#start').hide();
 
             var options = {
-                frequency: 100
-            }; // Update every 0.1 seconds
+                frequency: 300
+            }; // Update every 0.3 seconds
 			
             watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
         }
@@ -85,13 +85,13 @@
             document.getElementById("Y").innerHTML = "Top: " + Y ;
             document.getElementById("Z").innerHTML = "Size: " + Z ;
 
-            document.getElementById("cercle").style.left = X + "%"
-            document.getElementById("cercle").style.top = Y + "%"
-            document.getElementById("cercle").style.width = Z + "px"
-            document.getElementById("cercle").style.height = Z + "px"
+            document.getElementById("quadrat").style.left = X + "%"
+            document.getElementById("quadrat").style.top = Y + "%"
+            document.getElementById("quadrat").style.width = Z + "px"
+            document.getElementById("quadrat").style.height = Z + "px"
             
-            document.getElementById("cercle").style.marginLeft = "-" + X/2 + "px"
-            document.getElementById("cercle").style.marginTop = "-" + Y/2 + "px"
+            document.getElementById("quadrat").style.marginLeft = "-" + (Z/2) + "px"
+            document.getElementById("quadrat").style.marginTop = "-" + (Z/2) + "px"
 
         };
 
@@ -106,6 +106,15 @@
 
                 $('#start').show();
                 $('#stop').hide();
+
+            document.getElementById("quadrat").style.left = 50 + "%"
+            document.getElementById("quadrat").style.top = 50 + "%"
+            document.getElementById("quadrat").style.width = 60 + "px"
+            document.getElementById("quadrat").style.height = 60 + "px"
+            
+            document.getElementById("quadrat").style.marginLeft = "-30px"
+            document.getElementById("quadrat").style.marginTop = "-30px"
+
             }
 
         }
